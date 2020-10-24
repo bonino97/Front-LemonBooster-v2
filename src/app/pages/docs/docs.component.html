@@ -1,14 +1,20 @@
 <nav class="navbar navbar-expand-lg bg-success">
+  <button
+    class="btn btn-success btn-sm btn-simple"
+    [routerLink]="['/programs/list']"
+  >
+    <i class="fas fa-arrow-left"></i>
+  </button>
   <div class="container">
     <a class="navbar-brand" [routerLink]="['/login']">LemonBooster</a>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/docs']">Install</a>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="Install">Install</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/docs']">Tools</a>
-        </li>
+        </li> -->
       </ul>
     </div>
   </div>
@@ -18,7 +24,121 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          
+          <h2 class="text-success">¿How to Run?</h2>
+        </div>
+        <div class="card-body">
+          <ol name="Install">
+            <li>
+              <p>
+                Go to
+                <a href="https://m.do.co/c/b11f008f8927" target="_blank"
+                  >DigitalOcean</a
+                >,
+                <a
+                  href="https://www.linode.com/?r=30f11dc4791aafe40fad71f0de8f0682f88fc7af"
+                  target="_blank"
+                  >Linode</a
+                >
+                or run a VPS with your favourite provider.
+              </p>
+              <ul>
+                <li>
+                  <p>A VPS of 2gb ram and 50gb storage is recommended.</p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>
+                On your Shell →
+                <span class="text-warning">ssh root@[YourVpsIP]</span>
+              </p>
+            </li>
+            <li>
+              <p>
+                Once inside VPS →
+                <span class="text-warning">mkdir ~/tools</span>
+              </p>
+            </li>
+            <li>
+              <p>
+                Go to the tools folder →
+                <span class="text-warning">cd ~/tools</span>
+              </p>
+            </li>
+            <li>
+              <p>
+                Clone the repo →
+                <span class="text-warning"
+                  >git clone
+                  <a
+                    href="https://github.com/bonino97/LemonBooster-v2.git"
+                    target="_blank"
+                    >https://github.com/bonino97/LemonBooster-v2.git</a
+                  ></span
+                >
+              </p>
+            </li>
+            <li>
+              <p>
+                Go to Config LemonBooster folder →
+                <span class="text-warning"
+                  >cd ~/tools/LemonBooster-v2/Config-LemonBooster-v2</span
+                >
+              </p>
+            </li>
+            <li>
+              <p>
+                Give privileges to the SH Installer. →
+                <span class="text-warning"
+                  >chmod +x Install-LemonBooster-Ubuntu20.04.sh</span
+                >
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    If you have a VPS with Ubuntu 18.04. →
+                    <span class="text-warning"
+                      >chmod +x Install-LemonBooster-Ubuntu18.04.sh</span
+                    >
+                  </p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>
+                Run the Installer →
+                <span class="text-warning"
+                  >./Install-LemonBooster-Ubuntu20.04.sh</span
+                >
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    The script gonna install the database for save results, all
+                    the tools used by the tool and all the requireds
+                    dependencies.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The installer leave your VPS ready to configure on the WEB.
+                  </p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>
+                Once the Installer finish. Go to
+                <a [routerLink]="['/settings']" target="_blank">Settings.</a>
+                and load the <span class="text-warning"> VPS Ip </span>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If everything installed correctly, you should see [Status: <span class="text-success"><i style="font-weight: bold; font-size: 1.1em;" class="tim-icons icon-check-2"></i></span>]. In the left Sidebar options.
+              </p>
+            </li>
+          </ol>
         </div>
       </div>
     </div>

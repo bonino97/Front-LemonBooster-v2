@@ -5,6 +5,7 @@ import { Observable } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { environment } from "../../environments/environment";
 import { Router } from '@angular/router';
+import { JwtHelperService } from "@auth0/angular-jwt";
 
 @Injectable({
   providedIn: "root",
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
 export class AuthService {
   
   url = environment.authUrl;
+  helper = new JwtHelperService();
 
   constructor(
     private http: HttpClient,
@@ -55,6 +57,7 @@ export class AuthService {
   }
 
   LoggedIn() {
-    return !!localStorage.getItem('LemonToken');
+    const lemonToken = localStorage.getItem('LemonToken');
+    return (!!lemonToken && !this.helper.isTokenExpired(lemonToken));
   }
 }

@@ -4,3 +4,12 @@
     border-radius: 0.2857rem;
 }
 
+.sidebar-status {
+    margin-top: 400px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .sidebar-status {
+        margin-top: 490px;
+    }    
+}

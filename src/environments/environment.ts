@@ -7,7 +7,7 @@ export const environment = {
   staticUrl: 'http://localhost:5000/Static/',
   wsUrl: 'http://localhost:5000',
   apiUrl: 'http://localhost:5000/api',
-  authUrl: 'http://localhost:3000/api'
+  authUrl: 'http://auth.lemonbooster.com/api'
 };
 
 // export const environment = {

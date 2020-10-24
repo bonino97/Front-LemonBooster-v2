@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { Socket } from 'ngx-socket-io';
+import { WebsocketService } from 'src/app/services/websocket.service';
 
 export interface RouteInfo {
   path: string;
@@ -35,6 +37,12 @@ export const ROUTES: RouteInfo[] = [
     title: "Profile",
     type: "link",
     icontype: "tim-icons icon-single-02",
+  },
+  {
+    path: "/docs",
+    title: "Docs",
+    type: "link",
+    icontype: "tim-icons icon-single-copy-04",
   },
   // {
   //   path: "/findomain",
@@ -75,11 +83,15 @@ export const ROUTES: RouteInfo[] = [
 })
 export class SidebarComponent implements OnInit {
   menuItems: any;
+  socketStatus: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    public wsService: WebsocketService) {}
 
   ngOnInit() {
     this.menuItems = ROUTES.filter((menuItem) => menuItem);
+    this.wsService.CheckStatus();
   }
 
   logout() {

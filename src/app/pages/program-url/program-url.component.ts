@@ -5,6 +5,7 @@ import { ActivatedRoute } from "@angular/router";
 import { Socket } from "ngx-socket-io";
 import swal from "sweetalert2";
 import { environment } from "src/environments/environment";
+import { WebsocketService } from 'src/app/services/websocket.service';
 
 @Component({
   selector: "app-program-url",
@@ -29,7 +30,8 @@ export class ProgramUrlComponent implements OnInit {
     public route: ActivatedRoute,
     public programService: ProgramService,
     public toolService: ToolsService,
-    public socket: Socket
+    public socket: Socket,
+    public wsService: WebsocketService
   ) {}
 
   ngOnInit(): void {
