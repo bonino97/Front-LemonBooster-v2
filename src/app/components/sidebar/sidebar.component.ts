@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { Socket } from 'ngx-socket-io';
 import { WebsocketService } from 'src/app/services/websocket.service';
 
 export interface RouteInfo {
@@ -87,7 +86,8 @@ export class SidebarComponent implements OnInit {
 
   constructor(
     private router: Router,
-    public wsService: WebsocketService) {}
+    public wsService: WebsocketService
+    ) {}
 
   ngOnInit() {
     this.menuItems = ROUTES.filter((menuItem) => menuItem);
