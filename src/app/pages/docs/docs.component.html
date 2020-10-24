@@ -30,6 +30,20 @@
           <ol>
             <li>
               <p>
+                First of one. Sign up to LemonBooster
+                <a [routerLink]="['/auth/register']" target="_blank"
+                  >Register</a
+                >
+                and then
+                <a
+                  [routerLink]="['/auth/login']"
+                  target="_blank"
+                  >Login</a
+                >
+              </p>
+            </li>
+            <li>
+              <p>
                 Go to
                 <a href="https://m.do.co/c/b11f008f8927" target="_blank"
                   >DigitalOcean</a
@@ -135,99 +149,252 @@
             </li>
             <li>
               <p>
-                If everything installed correctly, you should see [Status: <span class="text-success"><i style="font-weight: bold; font-size: 1.1em;" class="tim-icons icon-check-2"></i></span>]. In the left Sidebar options.
+                If everything installed correctly, you should see [Status:
+                <span class="text-success"
+                  ><i
+                    style="font-weight: bold; font-size: 1.1em"
+                    class="tim-icons icon-check-2"
+                  ></i></span
+                >]. In the left Sidebar options.
               </p>
             </li>
             <li>
               <p>
-                <span class="text-danger"> IMPORTANT! </span>  → If you want to see the proccess running:
+                <span class="text-danger"> IMPORTANT! </span> → If you want to
+                see the proccess running:
               </p>
               <ol>
                 <li>
-                  <p>Go to Config Folder → <span class="text-warning"> cd ~/tools/LemonBooster-v2/Config-LemonBooster-v2</span> </p>
+                  <p>
+                    Go to Config Folder →
+                    <span class="text-warning">
+                      cd ~/tools/LemonBooster-v2/Config-LemonBooster-v2</span
+                    >
+                  </p>
                 </li>
                 <li>
-                  <p>Give privileges to the ViewExecution SH. → <span class="text-warning"> chmod +x ViewExecution.sh </span> </p>
+                  <p>
+                    Give privileges to the ViewExecution SH. →
+                    <span class="text-warning">
+                      chmod +x ViewExecution.sh
+                    </span>
+                  </p>
                 </li>
                 <li>
-                  <p>Run SH. → <span class="text-warning"> ./ViewExecution.sh </span></p>
+                  <p>
+                    Run SH. →
+                    <span class="text-warning"> ./ViewExecution.sh </span>
+                  </p>
                 </li>
                 <li>
-                  <p>By this way, you can execute the tools, and see all the proccess running (tools included).</p>
+                  <p>
+                    By this way, you can execute the tools, and see all the
+                    proccess running (tools included).
+                  </p>
                 </li>
               </ol>
             </li>
           </ol>
-          <img style="margin-left: 20%; border: 1px solid #00f2c3;" src="https://i.pinimg.com/originals/78/9d/62/789d620a379636d58b64755a84223599.gif" alt="LemonBooster-GIF">
+          <img
+            style="margin-left: 20%; border: 1px solid #00f2c3"
+            src="https://i.pinimg.com/originals/78/9d/62/789d620a379636d58b64755a84223599.gif"
+            alt="LemonBooster-GIF"
+          />
         </div>
       </div>
     </div>
-    <hr class="hr">
+    <hr class="hr" />
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <h2 class="text-success">Features: </h2>
+          <h2 class="text-success">Features:</h2>
         </div>
         <div class="card-body">
           <ol>
-            <li> <p> <span class="text-danger">OneClick complete Scanning.</span>[Run Subdomain Enumeration, Alives, Screenshots, Spidering]</p></li> 
-            <li> <p><span class="text-danger"> Subdomain Enumerations. </span> [Findomain, Subfinder, Assetfinder, Amass, Github Search, Permutations]</p> </li> 
-            <li> <p><span class="text-danger">Alives.</span> [Httprobe]</p> </li> 
-            <li> <p><span class="text-danger">Subdomain Response Codes.</span> [Hakcheckurl]</p> </li> 
-            <li> <p><span class="text-danger">Screenshots. </span>[Aquatone]</p> </li> 
-            <li> <p><span class="text-danger">Js Scanning.</span> [Linkfinder]</p> </li>
-            <li> <p><span class="text-danger">Waybackurls.</span> [Waybackurls]</p> </li> 
-            <li> <p><span class="text-danger">Spidering.</span> [GoSpider, Hakrawler].</p> </li> 
-            <li> <p><span class="text-danger">Dir Bruteforcing. </span>[Dirsearch].</p> </li> 
-            <li> <p><span class="text-danger">Get multiples loaded lists to use.</span></p> </li> 
-            <li> <p><span class="text-danger">Save results on MongoDB.</span></p> </li> 
-            <li> <p><span class="text-danger">Compare Old Results with New Results in each Scanning.</span></p> </li> 
-            <li> <p><span class="text-danger">New Results in Monitoring Option.</span></p></li> 
+            <li>
+              <p>
+                <span class="text-danger">OneClick complete Scanning.</span>[Run
+                Subdomain Enumeration, Alives, Screenshots, Spidering]
+              </p>
+            </li>
+            <li>
+              <p>
+                <span class="text-danger"> Subdomain Enumerations. </span>
+                [Findomain, Subfinder, Assetfinder, Amass, Github Search,
+                Permutations]
+              </p>
+            </li>
+            <li>
+              <p><span class="text-danger">Alives.</span> [Httprobe]</p>
+            </li>
+            <li>
+              <p>
+                <span class="text-danger">Subdomain Response Codes.</span>
+                [Hakcheckurl]
+              </p>
+            </li>
+            <li>
+              <p><span class="text-danger">Screenshots. </span>[Aquatone]</p>
+            </li>
+            <li>
+              <p><span class="text-danger">Js Scanning.</span> [Linkfinder]</p>
+            </li>
+            <li>
+              <p><span class="text-danger">Waybackurls.</span> [Waybackurls]</p>
+            </li>
+            <li>
+              <p>
+                <span class="text-danger">Spidering.</span> [GoSpider,
+                Hakrawler].
+              </p>
+            </li>
+            <li>
+              <p>
+                <span class="text-danger">Dir Bruteforcing. </span>[Dirsearch].
+              </p>
+            </li>
+            <li>
+              <p>
+                <span class="text-danger"
+                  >Get multiples loaded lists to use.</span
+                >
+              </p>
+            </li>
+            <li>
+              <p><span class="text-danger">Save results on MongoDB.</span></p>
+            </li>
+            <li>
+              <p>
+                <span class="text-danger"
+                  >Compare Old Results with New Results in each Scanning.</span
+                >
+              </p>
+            </li>
+            <li>
+              <p>
+                <span class="text-danger"
+                  >New Results in Monitoring Option.</span
+                >
+              </p>
+            </li>
           </ol>
         </div>
       </div>
     </div>
-    <hr>
+    <hr />
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <h2 class="text-success">Tools: </h2>
+          <h2 class="text-success">Tools:</h2>
         </div>
         <div class="card-body">
           <ol>
-            <li><a target="_blank" href="https://github.com/Findomain/Findomain">Findomain</a> </li> 
-            <li><a target="_blank" href="https://github.com/tomnomnom/assetfinder">Assetfinder</a> </li> 
-            <li><a target="_blank" href="https://github.com/projectdiscovery/subfinder">Subfinder</a> </li> 
-            <li><a target="_blank" href="https://github.com/OWASP/Amass">Amass</a> </li> 
-            <li><a target="_blank" href="https://github.com/gwen001/github-search">Github Search</a> </li> 
-            <li><a target="_blank" href="https://github.com/OJ/gobuster">GoBuster</a> </li> 
-            <li><a target="_blank" href="https://github.com/tomnomnom/httprobe">Httprobe</a> </li> 
-            <li><a target="_blank" href="https://github.com/michenriksen/aquatone">Aquatone</a> </li> 
-            <li><a target="_blank" href="https://github.com/GerbenJavado/LinkFinder">Linkfinder</a> </li> 
-            <li><a target="_blank" href="https://github.com/hakluke/hakcheckurl">Hakcheckurl</a> </li> 
-            <li><a target="_blank" href="https://github.com/tomnomnom/waybackurls">Waybackurls</a> </li> 
-            <li><a target="_blank" href="https://github.com/jaeles-project/gospider">GoSpider</a> </li> 
-            <li><a target="_blank" href="https://github.com/hakluke/hakrawler">Hakrawler</a> </li> 
-            <li><a target="_blank" href="https://github.com/maurosoria/dirsearch">Dirsearch</a> </li> 
+            <li>
+              <a target="_blank" href="https://github.com/Findomain/Findomain"
+                >Findomain</a
+              >
+            </li>
+            <li>
+              <a target="_blank" href="https://github.com/tomnomnom/assetfinder"
+                >Assetfinder</a
+              >
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href="https://github.com/projectdiscovery/subfinder"
+                >Subfinder</a
+              >
+            </li>
+            <li>
+              <a target="_blank" href="https://github.com/OWASP/Amass">Amass</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://github.com/gwen001/github-search"
+                >Github Search</a
+              >
+            </li>
+            <li>
+              <a target="_blank" href="https://github.com/OJ/gobuster"
+                >GoBuster</a
+              >
+            </li>
+            <li>
+              <a target="_blank" href="https://github.com/tomnomnom/httprobe"
+                >Httprobe</a
+              >
+            </li>
+            <li>
+              <a target="_blank" href="https://github.com/michenriksen/aquatone"
+                >Aquatone</a
+              >
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href="https://github.com/GerbenJavado/LinkFinder"
+                >Linkfinder</a
+              >
+            </li>
+            <li>
+              <a target="_blank" href="https://github.com/hakluke/hakcheckurl"
+                >Hakcheckurl</a
+              >
+            </li>
+            <li>
+              <a target="_blank" href="https://github.com/tomnomnom/waybackurls"
+                >Waybackurls</a
+              >
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href="https://github.com/jaeles-project/gospider"
+                >GoSpider</a
+              >
+            </li>
+            <li>
+              <a target="_blank" href="https://github.com/hakluke/hakrawler"
+                >Hakrawler</a
+              >
+            </li>
+            <li>
+              <a target="_blank" href="https://github.com/maurosoria/dirsearch"
+                >Dirsearch</a
+              >
+            </li>
           </ol>
         </div>
       </div>
     </div>
     <div class="col-md-12">
       <div class="card">
-        <div class="card-header">
-        </div>
+        <div class="card-header"></div>
         <div class="card-body">
-          <h4>Follow us on <a target="_blank" href="https://twitter.com/lemon_booster">Twitter</a></h4>
-          <br>
-          <p>If you found a bug, please send to support@lemonbooster.com or make a Github Issue. :)</p>
-          <br>
+          <h4>
+            Follow us on
+            <a target="_blank" href="https://twitter.com/lemon_booster"
+              >Twitter</a
+            >
+          </h4>
+          <br />
+          <p>
+            If you found a bug, please send to support@lemonbooster.com or make
+            a Github Issue. :)
+          </p>
+          <br />
           <p>Any suggestion is welcome.</p>
-          <br>
-          <p>If you are interested in support the tool because you liked the project:</p>
-          <a href="https://www.buymeacoffee.com/lemonbooster"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=lemonbooster&button_colour=00f2c3&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff"></a>
-          <br>
-          <br>
+          <br />
+          <p>
+            If you are interested in support the tool because you liked the
+            project:
+          </p>
+          <a href="https://www.buymeacoffee.com/lemonbooster"
+            ><img
+              src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=lemonbooster&button_colour=00f2c3&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff"
+          /></a>
+          <br />
+          <br />
           <p>
             <span class="text-warning">BTC Wallet: </span>
             156CNj43EDXKWj2s2sKnNzWga3jX4kHQYf
@@ -236,9 +403,9 @@
             <span class="text-warning">ETH Wallet: </span>
             0x2318eB71Ff070955aC7064750503855392aE83A9
           </p>
-          <br>
-          <br>
-          <h3 class="text-success">~ HappyHacking ~</h3> 
+          <br />
+          <br />
+          <h3 class="text-success">~ HappyHacking ~</h3>
         </div>
       </div>
     </div>
