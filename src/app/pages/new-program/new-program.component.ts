@@ -28,22 +28,36 @@ export class NewProgramComponent implements OnInit {
 
   addProgram(){
 
+    var programName = '';
+
     if(this.form.invalid){
       return ;
     }
 
-    const Scopes = [];
-    const splitedScopes = this.form.value.Scopes.split(',');
-
-    splitedScopes.forEach(element => {
-      Scopes.push(element.trim());
-    });
-
-    this.form.patchValue({
-      Scopes
-    });
-
     if(this.form.valid){
+
+      if(this.form.value.Name.indexOf(' ') > -1){
+        const arrayName = this.form.value.Name.split(' ');
+        
+        arrayName.forEach(element => {
+          programName += element;
+        });
+      } else {
+        programName = this.form.value.Name;
+      }
+  
+      const Scopes = [];
+      const splitedScopes = this.form.value.Scopes.split(',');
+  
+      splitedScopes.forEach(element => {
+        Scopes.push(element.trim());
+      });
+  
+      this.form.patchValue({
+        Scopes,
+        Name: programName
+      });
+
       this.programService.AddProgram(this.form.value)
         .subscribe((data:any) => {
           if(data.success) {
