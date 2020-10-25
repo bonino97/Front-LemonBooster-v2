@@ -35,11 +35,7 @@
                   >Register</a
                 >
                 and then
-                <a
-                  [routerLink]="['/auth/login']"
-                  target="_blank"
-                  >Login</a
-                >
+                <a [routerLink]="['/auth/login']" target="_blank">Login</a>
               </p>
             </li>
             <li>
@@ -203,7 +199,80 @@
         </div>
       </div>
     </div>
+    <hr />
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="text-success">Start Server before reboot VPS</h2>
+        </div>
+        <div class="card-body">
+          <ol>
+            <li>
+              <p>
+                Go to Config folder →
+                <span class="text-warning"
+                  >cd ~/tools/LemonBooster-v2/Config-LemonBooster-v2</span
+                >
+              </p>
+            </li>
+            <li>
+              <p>
+                Give privileges to StartServerBeforeReset sh →
+                <span class="text-warning"
+                  >chmod +x StartServerBeforeReset.sh</span
+                >
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    If you don't see any mentioned file. Don't remember to
+                    follow
+                    <span class="text-success">Update Server</span>
+                  </p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>
+                Execute →
+                <span class="text-warning">./StartServerBeforeReset.sh</span>
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
     <hr class="hr" />
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="text-success">Update Server</h2>
+        </div>
+        <div class="card-body">
+          <ol>
+            <li>
+              <p>
+                Go to LemonBooster folder →
+                <span class="text-warning">cd ~/tools/LemonBooster-v2</span>
+              </p>
+            </li>
+            <li>
+              <p>
+                Reset local changes →
+                <span class="text-warning">git reset --hard</span>
+              </p>
+            </li>
+            <li>
+              <p>
+                Pull new changes →
+                <span class="text-warning">git pull</span>
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <hr />
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">

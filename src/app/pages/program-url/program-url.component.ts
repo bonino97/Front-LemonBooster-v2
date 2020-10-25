@@ -35,9 +35,8 @@ export class ProgramUrlComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    console.log(this.executing);
     this.executing = true;
-    this.checkStatus();
-
     this.route.params.subscribe((data) => {
       this.programService.GetProgram(data["url"]).subscribe(
         (data) => {
@@ -124,17 +123,5 @@ export class ProgramUrlComponent implements OnInit {
     };
 
     this.toolService.WsExecuteCompleteScan(payload); // Ejecuto herramienta.
-  }
-
-  checkStatus() {
-    this.socket.on("connect", () => {
-      console.log("Connected to Server.");
-      this.executing = false;
-    });
-
-    this.socket.on("disconnect", () => {
-      console.log("Disconnected from Server.");
-      this.executing = true;
-    });
   }
 }
