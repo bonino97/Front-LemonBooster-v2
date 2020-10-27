@@ -72,6 +72,12 @@ export class NewProgramComponent implements OnInit {
           }
       }, (error) => {
         console.error(error);
+        swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+          footer: '<a href="http://beta.lemonbooster.com/settings">Please check your VPS connection.</a>'
+        });
         
       });
     }
