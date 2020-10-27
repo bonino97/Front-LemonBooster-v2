@@ -50,7 +50,8 @@ export class NewProgramComponent implements OnInit {
       const splitedScopes = this.form.value.Scopes.split(',');
   
       splitedScopes.forEach(element => {
-        Scopes.push(element.trim());
+        let scope = element.trim();
+        Scopes.push(scope);
       });
   
       this.form.patchValue({
