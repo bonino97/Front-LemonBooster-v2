@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
+import { WebsocketService } from 'src/app/services/websocket.service';
 
 @Component({
   selector: 'app-discovery',
@@ -11,12 +12,11 @@ export class DiscoveryComponent implements OnInit {
   _waybackurls:boolean = true; 
   _spider:boolean = false; 
   _directoryBruteforce:boolean = false; 
-  executing: boolean = false;
 
-  constructor(public socket: Socket) { }
+  constructor(public wsService: WebsocketService) { }
 
   ngOnInit(): void {
-    this.checkStatus();
+    
   }
   
   open(value){
@@ -38,18 +38,4 @@ export class DiscoveryComponent implements OnInit {
         break;
     }
   }
-
-  checkStatus(){
-    this.socket.on('connect', () => {
-      console.log('Connected to Server.');;
-      this.executing = false;
-    });
-
-    this.socket.on('disconnect', () => {
-      console.log('Disconnected from Server.');
-      this.executing = true;
-    });
-  }
-
-
 }

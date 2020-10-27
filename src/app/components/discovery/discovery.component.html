@@ -1,6 +1,6 @@
 <div class="row animate__animated animate__fadeIn">
     <div class="col-md-3">
-        <div class="card border">
+        <div class="card border" *ngIf="wsService.socketStatus" >
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-12">
@@ -23,8 +23,8 @@
         </div>
     </div>
     <div class="col-md-9">
-        <app-waybackurls *ngIf="_waybackurls !executing"></app-waybackurls>
-        <app-spider *ngIf="_spider !executing"></app-spider>
-        <app-directory-bruteforce *ngIf="_directoryBruteforce !executing"></app-directory-bruteforce>
+        <app-waybackurls *ngIf="_waybackurls && wsService.socketStatus"></app-waybackurls>
+        <app-spider *ngIf="_spider && wsService.socketStatus"></app-spider>
+        <app-directory-bruteforce *ngIf="_directoryBruteforce && wsService.socketStatus"></app-directory-bruteforce>
     </div>
 </div>

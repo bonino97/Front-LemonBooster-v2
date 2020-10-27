@@ -28,7 +28,7 @@ export class EditProgramComponent implements OnInit {
 
     this.form = new FormGroup({
 
-      Name: new FormControl('', Validators.required),
+      Name: new FormControl({value: '', disabled: true}, Validators.required),
       Scopes: new FormControl('', Validators.required)
 
     });
@@ -62,7 +62,8 @@ export class EditProgramComponent implements OnInit {
       const splitedScopes = this.form.value.Scopes.split(',');
   
       splitedScopes.forEach(element => {
-        Scopes.push(element.trim());
+        let scope = element.trim();
+        Scopes.push(scope);
       });
   
       this.form.patchValue({
