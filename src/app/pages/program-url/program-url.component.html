@@ -11,7 +11,7 @@
     ></ngx-loading>
   </div>
 </div>
-<div class="row mt-3 animate__animated animate__fadeIn" *ngIf="!!program">
+<div class="row mt-3 animate__animated animate__fadeIn" *ngIf="!!program && !executing">
   <div class="col-md-6 ml-auto mr-auto">
     <div class="card border">
       <ngx-loading
@@ -124,6 +124,6 @@
   </div>
 </div>
 <app-seeds *ngIf="_openSeeds"></app-seeds>
-<app-enumeration *ngIf="_openEnum"></app-enumeration>
-<app-discovery *ngIf="_openDiscovery"></app-discovery>
-<app-monitoring *ngIf="_openMonitoring"></app-monitoring>
+<app-enumeration *ngIf="_openEnum && !executing"></app-enumeration>
+<app-discovery *ngIf="_openDiscovery && !executing"></app-discovery>
+<app-monitoring *ngIf="_openMonitoring && !executing"></app-monitoring>
