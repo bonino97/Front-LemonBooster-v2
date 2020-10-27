@@ -6,13 +6,75 @@
     <i class="fas fa-arrow-left"></i>
   </button>
   <div class="container">
-    <a class="navbar-brand" [routerLink]="['/login']">LemonBooster</a>
+    <a class="navbar-brand navbar-expand-lg" [routerLink]="['/login']"
+      >LemonBooster</a
+    >
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="Install">Install</a>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            fragment="how-to-run"
+            type="button"
+            (click)="navigateToSection('how-to-run')"
+            >Install</a
+          >
         </li>
         <li class="nav-item">
+          <a
+            class="nav-link"
+            fragment="features"
+            type="button"
+            (click)="navigateToSection('features')"
+            >Features</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            fragment="tools"
+            type="button"
+            (click)="navigateToSection('tools')"
+            >Tools</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            fragment="reboot-vps"
+            type="button"
+            (click)="navigateToSection('reboot-vps')"
+            >Reboot VPS</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            fragment="update-server"
+            type="button"
+            (click)="navigateToSection('update-server')"
+            >Updates</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            fragment="add-list"
+            type="button"
+            (click)="navigateToSection('add-list')"
+            >Add Lists</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            fragment="to-do"
+            type="button"
+            (click)="navigateToSection('to-do')"
+            >To Do</a
+          >
+        </li>
+        <!-- <li class="nav-item">
           <a class="nav-link" [routerLink]="['/docs']">Tools</a>
         </li> -->
       </ul>
@@ -21,7 +83,8 @@
 </nav>
 <div class="container">
   <div class="row mt-2">
-    <div class="col-md-12">
+    <!-- How to run -->
+    <div class="col-md-12" id="how-to-run">
       <div class="card">
         <div class="card-header">
           <h2 class="text-success">¿How to Run?</h2>
@@ -200,7 +263,8 @@
       </div>
     </div>
     <hr />
-    <div class="col-md-12">
+    <!-- Start Server before Reboot -->
+    <div class="col-md-12" id="reboot-vps">
       <div class="card">
         <div class="card-header">
           <h2 class="text-success">Start Server before reboot VPS</h2>
@@ -243,7 +307,8 @@
       </div>
     </div>
     <hr class="hr" />
-    <div class="col-md-12">
+    <!-- Update Server -->
+    <div class="col-md-12" id="update-server">
       <div class="card">
         <div class="card-header">
           <h2 class="text-success">Update Server</h2>
@@ -273,7 +338,30 @@
       </div>
     </div>
     <hr />
-    <div class="col-md-12">
+    <!-- Add your own list -->
+    <div class="col-md-12" id="add-list">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="text-success">¿How to add your own Wordlist?</h2>
+        </div>
+        <div class="card-body">
+          <ol>
+            <li>
+              <p>
+                Copy and Paste the List inside the Lists folder →
+                <span class="text-warning"
+                  >cp Example.txt
+                  ~/tools/LemonBooster-v2/API-LemonBooster-v2/Common/Lists</span
+                >
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <!-- Features -->
+    <div class="col-md-12" id="features">
       <div class="card">
         <div class="card-header">
           <h2 class="text-success">Features:</h2>
@@ -351,7 +439,8 @@
       </div>
     </div>
     <hr />
-    <div class="col-md-12">
+    <!-- Tools -->
+    <div class="col-md-12" id="tools">
       <div class="card">
         <div class="card-header">
           <h2 class="text-success">Tools:</h2>
@@ -436,6 +525,59 @@
         </div>
       </div>
     </div>
+    <!-- ToDo -->
+    <div class="col-md-12" id="to-do">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="text-success">ToDo</h2>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>
+              <p>
+                <span class="text">Telegram Bot to receive Monitoring results.</span>
+              </p>
+            </li>
+            <li>
+              <p>
+                <span class="text">Port Scanning with Naabu.</span>
+              </p>
+            </li>
+            <li>
+              <p>
+                <span class="text">Add ffuf to Directory Bruteforcing module.</span>
+              </p>
+            </li>
+            <li>
+              <p>
+                <span class="text">Replace Waybackurls to Gau.</span>
+              </p>
+            </li>
+            <li>
+              <p>
+                <span class="text">Another JavaScript Scanner - JSF Scan.</span>
+              </p>
+            </li>
+            <li>
+              <p>
+                <span class="text">XSS Scanner - Kxss.</span>
+              </p>
+            </li>
+            <li>
+              <p>
+                <span class="text">Add a parameter discover - Arjun.</span>
+              </p>
+            </li>
+            <li>
+              <p>
+                <span class="text">S3 Bucket Finder - Thinking on that yet.</span>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Footer with Twitter and more stuff -->
     <div class="col-md-12">
       <div class="card">
         <div class="card-header"></div>
