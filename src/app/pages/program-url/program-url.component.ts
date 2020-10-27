@@ -2,9 +2,7 @@ import { ProgramService } from "src/app/services/program.service";
 import { Component, OnInit } from "@angular/core";
 import { ToolsService } from "src/app/services/tools.service";
 import { ActivatedRoute } from "@angular/router";
-import { Socket } from "ngx-socket-io";
 import swal from "sweetalert2";
-import { environment } from "src/environments/environment";
 import { WebsocketService } from 'src/app/services/websocket.service';
 
 @Component({
@@ -30,12 +28,10 @@ export class ProgramUrlComponent implements OnInit {
     public route: ActivatedRoute,
     public programService: ProgramService,
     public toolService: ToolsService,
-    public socket: Socket,
     public wsService: WebsocketService
   ) {}
 
   ngOnInit(): void {
-    console.log(this.executing);
     this.executing = true;
     this.route.params.subscribe((data) => {
       this.programService.GetProgram(data["url"]).subscribe(
@@ -56,14 +52,12 @@ export class ProgramUrlComponent implements OnInit {
     this.toolService.GetCompletedScan().subscribe(
       (data: any) => {
         if (data.executing) {
-          this.executing = true;
           swal.fire({
             html: `<span style='color:grey'>${data.msg}<span>`,
             timer: 25000,
             showConfirmButton: false,
           });
         } else {
-          this.executing = false;
           swal.fire({
             html: `<span style='color:grey'>${data.msg}<span>`,
             timer: 1000,
