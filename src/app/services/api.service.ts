@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {environment} from "../../environments/environment";
+import { AuthService } from './auth.service';
 
 export class ResponseGeneric {
   success: boolean;
@@ -18,14 +19,14 @@ export class ApiService {
 
   constructor(
     private http: HttpClient,
-    
+    private authService: AuthService
   ) { 
     console.log('API');  
   }
 
   POST(entity, data:any):Observable<any>{
     let params = JSON.stringify(data);
-    let headers = new HttpHeaders().set('Content-Type','application/json');
+    let headers = new HttpHeaders().set('Content-Type','application/json').set('Authorization', `Bearer ${this.authService.GetToken()}`);;
     
     return this.http.post(`${this.url}/${entity}`, params, {
       headers: headers
@@ -34,7 +35,7 @@ export class ApiService {
 
   PUT(entity, data:any):Observable<any>{
     let params = JSON.stringify(data);
-    let headers = new HttpHeaders().set('Content-Type','application/json');
+    let headers = new HttpHeaders().set('Content-Type','application/json').set('Authorization', `Bearer ${this.authService.GetToken()}`);;
     
     return this.http.put(`${this.url}/${entity}`, params, {
       headers: headers
@@ -42,7 +43,7 @@ export class ApiService {
   }
 
   DELETE(entity):Observable<any>{
-    let headers = new HttpHeaders().set('Content-Type','application/json');
+    let headers = new HttpHeaders().set('Content-Type','application/json').set('Authorization', `Bearer ${this.authService.GetToken()}`);;
     
     return this.http.delete(`${this.url}/${entity}`, {
       headers: headers
@@ -50,7 +51,7 @@ export class ApiService {
   }
 
   GET(entity):Observable<any> { 
-    let headers = new HttpHeaders().set('Content-Type','application/json');
+    let headers = new HttpHeaders().set('Content-Type','application/json').set('Authorization', `Bearer ${this.authService.GetToken()}`);;
 
     return this.http.get(`${this.url}/${entity}`,{
       headers: headers

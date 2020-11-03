@@ -57,16 +57,16 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.settingService.GetSetting().subscribe(
           (setting: any) => {
             if(setting.data.IpVPS) localStorage.setItem('IpVPS', setting.data.IpVPS);
+            this.router.navigate(['programs/list']);
+            setTimeout(() => {
+              location.reload();
+            }, 300);
           },
           (err: any) => {
             console.error(err);
           }
         );
         this.router.navigate(['programs/list']);
-
-        // setTimeout(() => {
-        //   location.reload();
-        // }, 300);
       },
       (error: any) => {
         console.error(error);

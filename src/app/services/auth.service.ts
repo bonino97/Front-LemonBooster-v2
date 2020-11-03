@@ -4,21 +4,17 @@ import { User } from "../models/user.models";
 import { Observable } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { environment } from "../../environments/environment";
-import { Router } from '@angular/router';
+import { Router } from "@angular/router";
 import { JwtHelperService } from "@auth0/angular-jwt";
 
 @Injectable({
   providedIn: "root",
 })
 export class AuthService {
-  
   url = environment.authUrl;
   helper = new JwtHelperService();
 
-  constructor(
-    private http: HttpClient,
-    private router: Router,
-    ) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   Register(user: User): Observable<any> {
     let params = JSON.stringify(user);
@@ -47,17 +43,22 @@ export class AuthService {
     });
   }
 
+  IsAuhtenticated(): Observable<any> {
+    let headers = new HttpHeaders().set("Content-Type", "application/json").set('Authorization', `Bearer ${this.GetToken()}`);;
+    return this.http.get(`${this.url}/auth/authenticated`, {headers});
+  }
+
   Logout() {
-    localStorage.removeItem('LemonToken');
-    this.router.navigate(['auth/login']);
+    localStorage.removeItem("LemonToken");
+    this.router.navigate(["auth/login"]);
   }
 
   GetToken() {
-    return localStorage.getItem('LemonToken');
+    return localStorage.getItem("LemonToken");
   }
 
   LoggedIn() {
-    const lemonToken = localStorage.getItem('LemonToken');
-    return (!!lemonToken && !this.helper.isTokenExpired(lemonToken));
+    const lemonToken = localStorage.getItem("LemonToken");
+    return !!lemonToken && !this.helper.isTokenExpired(lemonToken);
   }
 }
