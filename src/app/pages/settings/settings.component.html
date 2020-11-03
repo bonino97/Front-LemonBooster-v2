@@ -53,3 +53,102 @@
     </div>
   </div>
 </div>
+<div class="row">
+  <div class="col-lg-6">
+    <div class="card border">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-9">
+            <p class="category">Add your keys</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <form [formGroup]="keysForm" (ngSubmit)="addConfiguration()">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="git-token"> GIT Token:</label>
+                <input
+                  formControlName="GitToken"
+                  class="form-control"
+                  placeholder="Add GIT Token to Subdomain Enumeration with Github Search."
+                  type="text"
+                />
+              </div>
+              <div class="form-group">
+                <label for="telegram-token">
+                  Telegram BOT Access Token:&nbsp;&nbsp;&nbsp;<span
+                    style="color: rgb(241, 66, 66)"
+                    >* Create Telegram BOT →
+                    <a href="https://t.me/botfather" target="_blank">Here</a>
+                  </span></label
+                >
+                <input
+                  formControlName="TelegramToken"
+                  class="form-control"
+                  placeholder="Add Telegram BOT Token to configure monitoring results."
+                  type="text"
+                />
+              </div>
+              <div class="form-group">
+                <label for="telegram-chat-id">
+                  Telegram Chat Id: &nbsp;&nbsp;&nbsp;<span
+                    style="color: rgb(241, 66, 66)"
+                    >* View Chat Id →
+                    <a href="https://t.me/getidsbot" target="_blank">Here</a>
+                  </span></label
+                >
+                <input
+                  formControlName="TelegramChatId"
+                  class="form-control"
+                  placeholder="Add your Telegram Chat Id to receive results."
+                  type="text"
+                />
+              </div>
+              <div class="form-group">
+                <label for="virus-total"> Virus Total API Key:</label>
+                <input
+                  formControlName="VirusTotalApiKey"
+                  class="form-control"
+                  placeholder="Add your Virus Total API Key."
+                  type="text"
+                />
+              </div>
+              <div class="form-group">
+                <label for="facebook"> Facebook API Key:</label>
+                <input
+                  formControlName="FacebookApiKey"
+                  class="form-control"
+                  placeholder="Add your Facebook API Key."
+                  type="text"
+                />
+              </div>
+              <div class="form-group">
+                <label for="sec-trails"> Security Trails API Key:</label>
+                <input
+                  formControlName="SecurityTrailsApiKey"
+                  class="form-control"
+                  placeholder="Add your Security Trails API Key."
+                  type="text"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 ml-auto mr-auto">
+              <button
+                class="btn btn-success btn-sm btn-simple btn-block"
+                type="submit"
+                [disabled]="keysForm.invalid"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
