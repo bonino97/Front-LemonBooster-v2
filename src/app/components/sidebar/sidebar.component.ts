@@ -96,6 +96,7 @@ export class SidebarComponent implements OnInit {
 
   logout() {
     localStorage.removeItem("LemonToken");
+    localStorage.removeItem("IpVPS");
     this.router.navigate(["auth/login"]);
   }
 }
