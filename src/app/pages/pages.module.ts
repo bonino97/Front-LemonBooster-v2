@@ -9,6 +9,7 @@ import { ComponentsModule } from './../components/components.module';
 import { TooltipModule } from "ngx-bootstrap/tooltip";
 import { NgxLoadingModule } from 'ngx-loading';
 import { PagesRoutingModule } from './pages-routing.module';
+import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 
 /* COMPONENTS */
 import { NewProgramComponent } from './new-program/new-program.component';
@@ -33,7 +34,8 @@ import { ProfileComponent } from './profile/profile.component';
     HttpClientModule,
     ComponentsModule,
     TooltipModule.forRoot(),
-    NgxLoadingModule
+    NgxLoadingModule,
+    BsDropdownModule
   ],
   declarations: [
     NewProgramComponent,

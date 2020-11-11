@@ -6,8 +6,8 @@
     <i class="fas fa-arrow-left"></i>
   </button>
   <div class="container">
-    <a class="navbar-brand navbar-expand-lg" [routerLink]="['/login']"
-      >LemonBooster</a
+    <a class="navbar-brand navbar-expand-lg" [routerLink]="['/login']">
+      <span class="text-success"> LemonBooster </span></a
     >
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
@@ -29,6 +29,43 @@
             >Features</a
           >
         </li>
+        <div class="btn-group dropdown" dropdown>
+          <button
+            class="btn btn-success btn-simple btn-dropdown dropdown-toggle"
+            data-toggle="dropdown"
+            dropdownToggle
+            type="button"
+          >
+            Configs
+          </button>
+          <div
+            class="dropdown-menu"
+            *dropdownMenu
+            aria-labelledby="dropdownMenuLink"
+          >
+            <a
+              class="dropdown-item"
+              fragment="reboot-vps"
+              type="button"
+              (click)="navigateToSection('reboot-vps')"
+              >Reboot VPS</a
+            >
+            <a
+              class="dropdown-item"
+              fragment="update-server"
+              type="button"
+              (click)="navigateToSection('update-server')"
+              >Update Tool</a
+            >
+            <a
+              class="dropdown-item"
+              fragment="add-list"
+              type="button"
+              (click)="navigateToSection('add-list')"
+              >Add Lists</a
+            >
+          </div>
+        </div>
         <li class="nav-item">
           <a
             class="nav-link"
@@ -36,33 +73,6 @@
             type="button"
             (click)="navigateToSection('tools')"
             >Tools</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            fragment="reboot-vps"
-            type="button"
-            (click)="navigateToSection('reboot-vps')"
-            >Reboot VPS</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            fragment="update-server"
-            type="button"
-            (click)="navigateToSection('update-server')"
-            >Updates</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            fragment="add-list"
-            type="button"
-            (click)="navigateToSection('add-list')"
-            >Add Lists</a
           >
         </li>
         <li class="nav-item">
@@ -345,7 +355,7 @@
           <h2 class="text-success">¿How to add your own Wordlist?</h2>
         </div>
         <div class="card-body">
-          <ol>
+          <ul>
             <li>
               <p>
                 Copy and Paste the List inside the Lists folder →
@@ -355,7 +365,7 @@
                 >
               </p>
             </li>
-          </ol>
+          </ul>
         </div>
       </div>
     </div>
@@ -535,7 +545,9 @@
           <ul>
             <li>
               <p>
-                <span class="text">Telegram Bot to receive Monitoring results.</span>
+                <span class="text"
+                  >Telegram Bot to receive Monitoring results.</span
+                >
               </p>
             </li>
             <li>
@@ -545,7 +557,9 @@
             </li>
             <li>
               <p>
-                <span class="text">Add ffuf to Directory Bruteforcing module.</span>
+                <span class="text"
+                  >Add ffuf to Directory Bruteforcing module.</span
+                >
               </p>
             </li>
             <li>
@@ -570,7 +584,9 @@
             </li>
             <li>
               <p>
-                <span class="text">S3 Bucket Finder - Thinking on that yet.</span>
+                <span class="text"
+                  >S3 Bucket Finder - Thinking on that yet.</span
+                >
               </p>
             </li>
           </ul>

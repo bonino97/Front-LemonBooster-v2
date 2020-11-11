@@ -29,7 +29,7 @@ const appRoutes: Routes = [
     path: '',
     redirectTo: 'programs/list',
     pathMatch: 'full'
-  }
+}
 ];
 
 @NgModule({
