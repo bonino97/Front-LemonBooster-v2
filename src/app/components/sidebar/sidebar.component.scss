@@ -2,14 +2,8 @@
     background-color: #1e1e24;
     border: 0.0625rem solid #00f2c3 !important;
     border-radius: 0.2857rem;
-}
 
-.sidebar-status {
-    margin-top: 400px;
-}
-
-@media only screen and (max-width: 1200px) {
     .sidebar-status {
-        margin-top: 490px;
-    }    
+        margin-top: 165%;
+    }
 }

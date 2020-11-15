@@ -64,6 +64,20 @@
               (click)="navigateToSection('add-list')"
               >Add Lists</a
             >
+            <a
+              class="dropdown-item"
+              fragment="add-telegram-bot"
+              type="button"
+              (click)="navigateToSection('add-telegram-bot')"
+              >Add Telegram BOT</a
+            >
+            <a
+              class="dropdown-item"
+              fragment="add-git-token"
+              type="button"
+              (click)="navigateToSection('add-git-token')"
+              >Add GIT Access Token</a
+            >
           </div>
         </div>
         <li class="nav-item">
@@ -97,7 +111,7 @@
     <div class="col-md-12" id="how-to-run">
       <div class="card">
         <div class="card-header">
-          <h2 class="text-success">¿How to Run?</h2>
+          <h2 class="text-success">How to Run?</h2>
         </div>
         <div class="card-body">
           <ol>
@@ -352,7 +366,7 @@
     <div class="col-md-12" id="add-list">
       <div class="card">
         <div class="card-header">
-          <h2 class="text-success">¿How to add your own Wordlist?</h2>
+          <h2 class="text-success">How to add your own Wordlist?</h2>
         </div>
         <div class="card-body">
           <ul>
@@ -366,6 +380,145 @@
               </p>
             </li>
           </ul>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <!-- Add Telegram Bot -->
+    <div class="col-md-12" id="add-telegram-bot">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="text-success">How to add your Telegram BOT?</h2>
+        </div>
+        <div class="card-body">
+          <ol>
+            <li>
+              <p>
+                Follow all the steps neccesaries to create a Telegram Bot →
+
+                <a
+                  target="_blank"
+                  href="https://docs.microsoft.com/en-us/azure/bot-service/bot-service-channel-connect-telegram?view=azure-bot-service-4.0"
+                  >Create Telegram BOT Link</a
+                >
+              </p>
+            </li>
+            <li>
+              <p>Copy the Token provided by Bot Father.</p>
+            </li>
+            <li>
+              <p>
+                Go to →
+                <span class="text-danger"
+                  >cd ~/tools/LemonBooster-v2/API-LemonBooster-v2/</span
+                >
+              </p>
+            </li>
+            <li>
+              <p>
+                Paste this line inside
+                <span class="text-warning">.env</span> file →
+                <span class="text-danger">TELEGRAM_TOKEN=</span
+                ><span class="text-success"
+                  >&lt;&lt;Your Token Provided by Bot Father&gt;&gt;</span
+                >
+              </p>
+            </li>
+            <li>
+              <p>
+                Open telegram and search
+                <span class="text-warning">@getidsbot</span> (This BOT will
+                provide your own Chat Id)
+              </p>
+            </li>
+            <li>
+              <p>
+                Put <span class="text-success">/start</span>&nbsp;into
+                <span class="text-warning">@getidsbot</span> channel in to get
+                your Chat Id.
+              </p>
+            </li>
+            <li>
+              <p>
+                Copy <span class="text-success">id</span> to the
+                <span class="text-warning">@getidsbot</span> response.
+              </p>
+            </li>
+            <li>
+              <p>
+                Paste this line inside
+                <span class="text-warning">.env</span> file →
+                <span class="text-danger">TELEGRAM_CHAT_ID=</span
+                ><span class="text-success"
+                  >&lt;&lt;Your ChatId Provided by
+                  <span class="text-warning">@getidsbot</span>&gt;&gt;</span
+                >
+              </p>
+            </li>
+            <li>
+              <p>
+                You gonna start to receive
+                <span class="text-info">Telegram Notifications</span> with new
+                <span class="text-danger">Monitoring Results</span> when you run
+                some tools.
+              </p>
+            </li>
+          </ol>
+          <img
+            style="margin-left: 20%; border: 1px solid #00f2c3"
+            src="../../../assets/img/lemon-env.jpg"
+            alt="LemonBooster-ENV"
+          />
+        </div>
+      </div>
+    </div>
+    <hr />
+    <!-- Add GIT Token -->
+    <div class="col-md-12" id="add-git-token">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="text-success">How to add your GIT Token?</h2>
+        </div>
+        <div class="card-body">
+          <ol>
+            <li>
+              <p>
+                Follow all the steps neccesaries to create a GIT Token →
+
+                <a
+                  target="_blank"
+                  href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token"
+                  >Create Personal GIT Access Token</a
+                >
+              </p>
+            </li>
+            <li>
+              <p>Copy the Token generated by GitHub.</p>
+            </li>
+            <li>
+              <p>
+                Go to →
+                <span class="text-danger"
+                  >cd ~/tools/LemonBooster-v2/API-LemonBooster-v2/</span
+                >
+              </p>
+            </li>
+            <li>
+              <p>
+                Paste this line inside
+                <span class="text-warning">.env</span> file →
+                <span class="text-danger">GIT_TOKEN==</span
+                ><span class="text-success"
+                  >&lt;&lt;Your Access Token Provided by GitHub&gt;&gt;</span
+                >
+              </p>
+            </li>
+          </ol>
+          <img
+            style="margin-left: 20%; border: 1px solid #00f2c3"
+            src="../../../assets/img/lemon-env.jpg"
+            alt="LemonBooster-ENV"
+          />
         </div>
       </div>
     </div>
