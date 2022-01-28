@@ -9,9 +9,9 @@ import { SettingsComponent } from './settings/settings.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NgModule } from '@angular/core';
 
-
 const PagesRoutes: Routes = [
-  { path: 'programs/list', component: ProgramsComponent }, 
+  { path: '', component: ProgramsComponent },
+  { path: 'programs/list', component: ProgramsComponent },
   { path: 'programs/new-program', component: NewProgramComponent },
   { path: 'programs/:url/edit', component: EditProgramComponent },
   { path: 'programs/:url', component: ProgramUrlComponent },
@@ -26,10 +26,8 @@ const PagesRoutes: Routes = [
   { path: 'jsearch', component: ComingSoonComponent },
 ];
 
-
 @NgModule({
   imports: [RouterModule.forChild(PagesRoutes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-
-export class PagesRoutingModule { }
+export class PagesRoutingModule {}

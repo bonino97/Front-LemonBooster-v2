@@ -1,11 +1,18 @@
+<nav class="navbar navbar-expand-lg bg-success">
+  <div class="container">
+    <a class="navbar-brand navbar-expand-lg" [routerLink]="['/']">
+      <img class="nav-img" src="../../../assets/img/icons8-citrus-64.png" />
+      <span class="text-success"> LemonBooster </span></a
+    >
+  </div>
+</nav>
 <div class="wrapper">
-    <div class="sidebar"><app-sidebar></app-sidebar></div>
-    <div class="main-panel">
-      <app-navbar></app-navbar>
-  
-      <div class="content">
-        <router-outlet></router-outlet>
-      </div>
+  <!-- <div class="sidebar"><app-sidebar></app-sidebar></div> -->
+  <div class="main-panel">
+    <!-- <app-navbar></app-navbar> -->
+
+    <div class="content">
+      <router-outlet></router-outlet>
     </div>
   </div>
-  
+</div>

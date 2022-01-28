@@ -1,13 +1,8 @@
-
-
-
-
-
 /* MODULES */
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io'; //Sockets 
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io'; //Sockets
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { PagesModule } from './pages/pages.module';
@@ -21,15 +16,13 @@ import { AppComponent } from './app.component';
 /* CONFIG */
 import { environment } from 'src/environments/environment';
 
-
-const config: SocketIoConfig = { 
-  url: `http://${localStorage.getItem('IpVPS')}:5000`, options: {} 
+const config: SocketIoConfig = {
+  url: `http://104.248.113.209:5000`,
+  options: {},
 };
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -39,9 +32,9 @@ const config: SocketIoConfig = {
     AuthModule,
     ComponentsModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

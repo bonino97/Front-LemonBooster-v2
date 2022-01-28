@@ -17,16 +17,24 @@
         <p>{{ menuitem.title }}</p>
       </a>
     </li>
-    <li routerLinkActive="active">
-      <a type="button" (click)="logout()">
-        <i class="tim-icons icon-button-power"></i>
-        <p>Logout</p>
-      </a>
-    </li>
   </ul>
   <div class="row sidebar-status">
     <div class="col-md-12">
-      <p class="ml-2">Status: <span *ngIf="wsService.socketStatus" class="text-success"><i style="font-weight: bold; font-size: 1.1em;" class="tim-icons icon-check-2"></i></span> <span *ngIf="!wsService.socketStatus" class="text-danger"><i style="font-weight: bold; font-size: 1.1em;" class="tim-icons icon-simple-remove"></i></span> </p>
+      <p class="ml-2">
+        Status:
+        <span *ngIf="wsService.socketStatus" class="text-success"
+          ><i
+            style="font-weight: bold; font-size: 1.1em"
+            class="tim-icons icon-check-2"
+          ></i
+        ></span>
+        <span *ngIf="!wsService.socketStatus" class="text-danger"
+          ><i
+            style="font-weight: bold; font-size: 1.1em"
+            class="tim-icons icon-simple-remove"
+          ></i
+        ></span>
+      </p>
     </div>
   </div>
 </div>

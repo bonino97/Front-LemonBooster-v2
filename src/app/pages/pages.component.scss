@@ -1,4 +1,41 @@
-.main-panel{
-    background: linear-gradient(#1e1e24, #1e1e24);
-    border-color: #1e1e24;
+.main-panel {
+  background: linear-gradient(#1e1e24, #1e1e24);
+  border-color: #1e1e24;
+}
+
+.navbar.bg-success {
+  background-color: #1e1e24 !important;
+  border: 2px solid #00bf9a;
+}
+
+.nav-link:hover {
+  color: #00f2c3 !important;
+}
+
+.btn-dropdown {
+  color: white;
+  font-weight: normal;
+}
+
+.btn-dropdown:hover {
+  color: white;
+  font-weight: normal;
+}
+
+.main-panel .content {
+  padding: 80px 30px 30px 30px !important;
+}
+
+.navbar .container {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.nav-img {
+  width: 25px;
+  margin-bottom: 0.65rem;
+}
+
+.navbar {
+  padding: 1rem;
 }

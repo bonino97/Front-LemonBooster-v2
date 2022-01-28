@@ -1,14 +1,14 @@
-import { ProgramService } from "src/app/services/program.service";
-import { Component, OnInit } from "@angular/core";
-import { ToolsService } from "src/app/services/tools.service";
-import { ActivatedRoute } from "@angular/router";
-import swal from "sweetalert2";
+import { ProgramService } from 'src/app/services/program.service';
+import { Component, OnInit } from '@angular/core';
+import { ToolsService } from 'src/app/services/tools.service';
+import { ActivatedRoute } from '@angular/router';
+import swal from 'sweetalert2';
 import { WebsocketService } from 'src/app/services/websocket.service';
 
 @Component({
-  selector: "app-program-url",
-  templateUrl: "./program-url.component.html",
-  styleUrls: ["./program-url.component.scss"],
+  selector: 'app-program-url',
+  templateUrl: './program-url.component.html',
+  styleUrls: ['./program-url.component.scss'],
 })
 export class ProgramUrlComponent implements OnInit {
   error: any;
@@ -34,19 +34,22 @@ export class ProgramUrlComponent implements OnInit {
   ngOnInit(): void {
     this.executing = true;
     this.route.params.subscribe((data) => {
-      this.programService.GetProgram(data["url"]).subscribe(
-        (data) => {
-          this.program = data.data;
-          this.executing = false;
-        },
-        (error) => {
-          this.executing = false;
-          if (!error.error.success) {
-            this.error = error.error.msg;
+      console.log(data);
+      this.programService
+        .GetProgram(data['url'])
+        .subscribe(
+          (data) => {
+            console.log(data);
+            this.program = data.data;
+          },
+          (error) => {
+            if (!error.error.success) {
+              this.error = error.error.msg;
+            }
+            console.error(error);
           }
-          console.error(error);
-        }
-      );
+        )
+        .add(() => (this.executing = false));
     });
 
     this.toolService.GetCompletedScan().subscribe(
@@ -108,7 +111,7 @@ export class ProgramUrlComponent implements OnInit {
     this.scope = scope;
 
     this.route.params.subscribe((data) => {
-      this.url = data["url"];
+      this.url = data['url'];
     });
 
     let payload = {
