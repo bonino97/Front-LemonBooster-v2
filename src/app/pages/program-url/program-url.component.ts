@@ -33,49 +33,53 @@ export class ProgramUrlComponent implements OnInit {
 
   ngOnInit(): void {
     this.executing = true;
-    this.route.params.subscribe((data) => {
-      console.log(data);
-      this.programService
-        .GetProgram(data['url'])
-        .subscribe(
-          (data) => {
-            console.log(data);
-            this.program = data.data;
-          },
-          (error) => {
-            if (!error.error.success) {
-              this.error = error.error.msg;
+    this.route.params
+      .subscribe((data) => {
+        this.programService
+          .GetProgram(data['url'])
+          .subscribe(
+            (data) => {
+              console.log(data);
+              this.program = data.data;
+            },
+            (error) => {
+              console.error(error);
+              if (!error.error.success) {
+                this.error = error.error.msg;
+              }
             }
-            console.error(error);
-          }
-        )
-        .add(() => (this.executing = false));
-    });
+          )
+          .add(() => (this.executing = false));
+      })
+      .add(() => (this.executing = false));
 
-    this.toolService.GetCompletedScan().subscribe(
-      (data: any) => {
-        if (data.executing) {
+    this.toolService
+      .GetCompletedScan()
+      .subscribe(
+        (data: any) => {
+          if (data.executing) {
+            swal.fire({
+              html: `<span style='color:grey'>${data.msg}<span>`,
+              timer: 25000,
+              showConfirmButton: false,
+            });
+          } else {
+            swal.fire({
+              html: `<span style='color:grey'>${data.msg}<span>`,
+              timer: 1000,
+              showConfirmButton: false,
+            });
+          }
+        },
+        (error) => {
           swal.fire({
-            html: `<span style='color:grey'>${data.msg}<span>`,
+            html: `<span style='color:grey'>${error.error.msg}<span>`,
             timer: 25000,
             showConfirmButton: false,
           });
-        } else {
-          swal.fire({
-            html: `<span style='color:grey'>${data.msg}<span>`,
-            timer: 1000,
-            showConfirmButton: false,
-          });
         }
-      },
-      (error) => {
-        swal.fire({
-          html: `<span style='color:grey'>${error.error.msg}<span>`,
-          timer: 25000,
-          showConfirmButton: false,
-        });
-      }
-    );
+      )
+      .add(() => (this.executing = false));
   }
 
   open(value) {
