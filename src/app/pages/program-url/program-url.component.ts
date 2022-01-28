@@ -33,6 +33,8 @@ export class ProgramUrlComponent implements OnInit {
 
   ngOnInit(): void {
     this.executing = true;
+    console.log(this.wsService.socketStatus);
+    console.log(this.wsService.CheckStatus());
     this.route.params
       .subscribe((data) => {
         this.programService
