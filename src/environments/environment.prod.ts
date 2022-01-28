@@ -1,6 +1,7 @@
 export const environment = {
   production: true,
-  staticUrl: 'http://'+localStorage.getItem('IpVPS')+':5000/Static/',
-  authUrl: 'http://auth.lemonbooster.com/api'
+  staticUrl: 'https://api.lemonbooster.com/Static/',
+  wsUrl: 'https://api.lemonbooster.com/',
+  apiUrl: 'https://api.lemonbooster.com/api',
+  authUrl: 'http://auth.lemonbooster.com/api',
 };
-

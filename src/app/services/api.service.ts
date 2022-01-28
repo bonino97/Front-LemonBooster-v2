@@ -14,7 +14,8 @@ export class ResponseGeneric {
   providedIn: 'root',
 })
 export class ApiService {
-  url = `http://104.248.113.209:5000/api`;
+  // 104.248.113.209
+  url = `${environment.apiUrl}`;
 
   constructor(private http: HttpClient, private authService: AuthService) {
     console.log('API');

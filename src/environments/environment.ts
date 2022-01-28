@@ -4,10 +4,10 @@
 
 export const environment = {
   production: false,
-  staticUrl: 'http://localhost:5000/Static/',
-  wsUrl: 'http://localhost:5000',
-  apiUrl: 'http://localhost:5000/api',
-  authUrl: 'http://auth.lemonbooster.com/api'
+  staticUrl: 'https://api.lemonbooster.com/Static/',
+  wsUrl: 'https://api.lemonbooster.com/',
+  apiUrl: 'https://api.lemonbooster.com/api',
+  authUrl: 'http://auth.lemonbooster.com/api',
 };
 
 // export const environment = {
@@ -16,7 +16,6 @@ export const environment = {
 //   wsUrl: 'http://45.33.18.14:5000',
 //   apiUrl: 'http://45.33.18.14:5000/api'
 // };
-
 
 /*
  * For easier debugging in development mode, you can import the following file

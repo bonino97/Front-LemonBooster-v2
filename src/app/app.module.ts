@@ -17,7 +17,7 @@ import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
 
 const config: SocketIoConfig = {
-  url: `http://104.248.113.209:5000`,
+  url: `${environment.wsUrl}`,
   options: {},
 };
 
